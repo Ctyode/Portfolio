@@ -22,6 +22,9 @@ $(".tabs ul li").click(function() {
 });
 
 $(".projects_list ul li").click(function() {
+  $(".popup").find(".info[data-info-id=" + page + "]").addClass("active");
+
+  console.log("open" + page + "count" + count);
     $('body').css('overflow-y', 'hidden');
 })
 
@@ -41,13 +44,13 @@ $(document).ready(function () {
 
 });
 
-window.onhashchange = function () {
-  if (window.innerDocClick) {
-    //Your own in-page mechanism triggered the hash change
-  } else {
-    $('body').css('overflow-y', 'scroll');
-  }
-};
+// window.onhashchange = function () {
+//   if (window.innerDocClick) {
+//   } else {
+//       $('body').css('overflow-y', 'scroll');
+//     }
+//
+// };
 
 if($) {
 
@@ -59,58 +62,64 @@ if($) {
         $('#container > *').hide(0)
 
         var tabID = $(this).data("tab");
+
         $('#' + tabID).show(0);
 
     });
 }
-$(function() {
-   $(".overlay").each(function(_, overlay) {
 
-    var $overlay = $(overlay);
+id = "";
 
-    var page = 0;
-    count = $overlay.find(".popup .info").length - 1;
-    console.log(count);
+$('a.image').click(function() {
+  id = $(this).attr('href');
+  console.log(id + "id");
 
-    $(".left_arrow").click(function() {
-        console.log("left");
+  page = 0;
+  count = $(id).find(".popup .info").length - 1;
+  console.log(count + "циферь");
 
-        if(page <= 0) {
-          page = count;
-        } else {
-          page--
-        }
+});
 
-        var active = $(".info.active");
+$(".left_arrow").click(function() {
 
-        height = active.height();
-        console.log(height);
-        $(".content").css("height", height + 55);
+  console.log("page left" + page);
 
-        $(".popup").find(".info").removeClass("active");
-        $(".popup").find(".info[data-info-id=" + page + "]").addClass("active");
-        console.log(page);
-    })
+    if(page <= 0) {
+      page = count;
+    } else {
+      page--
+    }
 
-    $(".right_arrow").click(function() {
-        if(page >= count) {
-          page = 0
-        } else {
-          page++
-        }
+    var active = $(".info.active");
 
-        var active = $(".info.active");
+    height = active.height();
+    console.log(height);
+    $(".content").css("height", height + 55);
 
-        height = active.height();
-        console.log(height);
-        $(".content").css("height", height + 55);
+    $(".popup").find(".info").removeClass("active");
+    $(".popup").find(".info[data-info-id=" + page + "]").addClass("active");
+    console.log(page);
+})
 
-        console.log("right");
-        $(".popup").find(".info").removeClass("active");
-        $(".popup").find(".info[data-info-id=" + page + "]").addClass("active");
-        console.log(page);
-    })
-  })
+$(".right_arrow").click(function() {
+
+  console.log("page right" + page);
+    if(page >= count) {
+      page = 0
+    } else {
+      page++
+    }
+
+    var active = $(".info.active");
+
+    height = active.height();
+    console.log(height);
+    $(".content").css("height", height + 55);
+
+    // console.log("right");
+    $(".popup").find(".info").removeClass("active");
+    $(".popup").find(".info[data-info-id=" + page + "]").addClass("active");
+    console.log(page);
 })
 
 // $(function() {

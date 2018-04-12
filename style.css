@@ -233,6 +233,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
+  justify-content: center;
 }
 
 #container #interfaces .projects .projects_list li {
@@ -377,8 +378,8 @@ h1 {
   }
 
   #container #interfaces .description p {
-    font-size: 19px;
-    width: 708px;
+    font-size: 18px;
+    width: 707px;
     margin-top: 10px;
     line-height: 27px;
   }
@@ -442,8 +443,8 @@ h1 {
   }
 
   #container #interfaces .projects p {
-    font-size: 19px;
-    width: 665px;
+    font-size: 18px;
+    width: 707px;
     margin-top: 10px;
     line-height: 27px;
     margin-bottom: 34px;
@@ -652,7 +653,7 @@ h1 {
 
   #container #interfaces .projects p {
     font-size: 18px;
-    width: 647px;
+    width: 707px;
     line-height: 26px;
     margin-top: 10px;
     margin-bottom: 34px;
@@ -864,7 +865,7 @@ h1 {
 
   #container #interfaces .projects p {
     font-size: 17px;
-    width: 637px;
+    width: 646px;
     line-height: 25px;
     margin-top: 10px;
     margin-bottom: 34px;
@@ -976,7 +977,7 @@ h1 {
   }
 
   .tabs ul li {
-    width: 210px;
+    width: 199px;
     height: 58px;
     font-size: 22px;
     line-height: 60px;
