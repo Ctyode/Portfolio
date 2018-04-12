@@ -1,5 +1,5 @@
 .overlay {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   position: fixed;
   top: 0;
   left: 0;

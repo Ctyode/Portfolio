@@ -43,6 +43,7 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  overflow-y: scroll;
   font-family: "Lato";
   margin: 0;
   -webkit-font-smoothing: antialiased;

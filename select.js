@@ -23,9 +23,10 @@ $(".tabs ul li").click(function() {
 
 $(".projects_list ul li").click(function() {
   $(".popup").find(".info[data-info-id=" + page + "]").addClass("active");
+  console.log($('.overlay').css('visibility') == 'visible');
 
   console.log("open" + page + "count" + count);
-    $('body').css('overflow-y', 'hidden');
+  $('body').css('overflow-y', 'hidden');
 })
 
 $(".popup .close").click(function() {
@@ -44,13 +45,18 @@ $(document).ready(function () {
 
 });
 
-// window.onhashchange = function () {
-//   if (window.innerDocClick) {
-//   } else {
-//       $('body').css('overflow-y', 'scroll');
-//     }
-//
-// };
+
+window.onhashchange = function () {
+  if (window.innerDocClick) {
+  } else {
+    if($('.overlay').css('opacity') == '1') {
+      console.log("mdaaaa");
+      $('body').css('overflow-y', 'scroll');
+    }
+
+    }
+
+};
 
 if($) {
 
